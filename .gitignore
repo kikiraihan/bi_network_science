@@ -1,0 +1,14 @@
+.env
+/venv
+venv*
+.DS_Store
+**/.DS_Store
+**/__pycache__
+poetry.lock
+pyproject.toml
+poetry.lock.**
+**/data/processed/*
+**/data/raw/*
+[Dd]ummy
+*.csv
+.ipynb_checkpoints

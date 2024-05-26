@@ -1,0 +1,16 @@
+numpy
+pandas
+plotly
+scikit-learn
+scipy
+ipykernel
+geopandas
+matplotlib
+seaborn
+nbformat
+folium
+jcopml
+sqlalchemy
+cryptography
+networkx
+holoviews
