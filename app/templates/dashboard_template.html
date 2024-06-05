@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <!-- Include Plotly.js library via CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <style>
+        html, body {
+            background-color: white;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- header -->
+    {% include 'header.html' %}
+
+    <div class="flex flex-col gap-4 w-full h-full p-3" style="background-color: #EFEFEF;">
+        
+        <!-- <div class="text-2xl font-bold py-2 text-right">Explore Data</div> -->
+
+        <!-- Isian -->
+        <div class="grid grid-cols-3 gap-4">
+            {{ card_1 | safe }}
+            {{ card_2 | safe }}
+            {{ card_3 | safe }}
+        </div>
+
+        <!-- Figure -->
+        <div class="grid grid-cols-2 gap-4 w-full h-full">
+            <div class="col-span-2 p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Money Laundering Graph</div>
+                {{ graph_plotly | safe }}
+            </div>
+            <div class="col-span-2 p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Money Laundering Graph</div>
+                {{ line_transaction_date | safe }}
+            </div>
+
+            <div class="p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Community Segmented</div>
+                {{ line_partition | safe }}
+            </div>
+            <div class="p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Node From</div>
+                {{ bar_degree_from | safe }}
+            </div>
+
+            <div class="p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Node To</div>
+                {{ bar_degree_to | safe }}
+            </div>
+
+            <div class="p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Payment Currency</div>
+                {{ bar_payment_currency | safe }}
+            </div>
+
+            <div class="p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Receiving Currency</div>
+                {{ bar_receiving_currency | safe }}
+            </div>
+
+            <div class="p-4 bg-white shadow-md rounded-lg">
+                <div class="text-xs font-bold pb-2 text-center">Payment Format</div>
+                {{ bar_payment_format | safe }}
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,12 +1,8 @@
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 import pandas as pd
-import json
 import networkx as nx
 import plotly.express as px
 from umap import UMAP
-
-from modul.grafHelper import _set_networkx_graph
 
 # tidak terpakai
 def pie_proporsi(df_node):
@@ -23,9 +19,10 @@ def pie_proporsi(df_node):
     return fig.show()
 
 # tidak terpakai
-def plotly_graph(G,isShowlegend=False):
+def plotly_graph(G, isShowlegend=False):
     # G = _set_networkx_graph(df_node, df_edge)
     pos = nx.nx_agraph.graphviz_layout(G, prog="neato", args="")
+    # pos = nx.spring_layout
 
     # buat tracer graph. tracer adalah titik2, kalo edge titik yang jadi garis
     edge_trace, node_trace= _buat_tracer(G,pos)
